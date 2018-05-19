@@ -78,11 +78,11 @@ GameState.prototype.restartGame = function(difficulty) {
 			heart.setMaxHP(99);
 		} else {
 			switch(difficulty){
-				case "normal":
+				case "ノーマル":
 					heart.setMaxHP(99); break;
-				case "hard":
+				case "ハード":
 					heart.setMaxHP(20); break;
-				case "genocide":
+				case "ジェノサイド":
 					heart.setMaxHP(4); break;
 			}
 		}
@@ -182,19 +182,19 @@ GameState.prototype.endGame = function() {
 			bgm_undyne2.stop();	break;
 	}
 
-	if (this.difficulty == "aprilfools") {
-		document.getElementById("fairdyne").innerHTML = "APRIL FOOLS";
-		menu.normal_text_text = "I want to BE AN APRIL FOOL";
-		menu.hard_text_text = "I want OUT OF THIS MODE";
-		menu.genocide_text_text = "I want to PLAY THIS MODE FOR REAL";
-		menu.normal_text.text = "I want to BE AN APRIL FOOL";
-		menu.hard_text.text = "I want OUT OF THIS MODE";
-		menu.genocide_text.text = "I want to PLAY THIS MODE FOR REAL";
-	}
+	// if (this.difficulty == "aprilfools") {
+	// 	document.getElementById("fairdyne").innerHTML = "APRIL FOOLS";
+	// 	menu.normal_text_text = "I want to BE AN APRIL FOOL";
+	// 	menu.hard_text_text = "I want OUT OF THIS MODE";
+	// 	menu.genocide_text_text = "I want to PLAY THIS MODE FOR REAL";
+	// 	menu.normal_text.text = "I want to BE AN APRIL FOOL";
+	// 	menu.hard_text.text = "I want OUT OF THIS MODE";
+	// 	menu.genocide_text.text = "I want to PLAY THIS MODE FOR REAL";
+	// }
 
 	undyne.queue_text(endGameText(this.difficulty, this.elapsed_time), menu.show.bind(menu));
 
-}
+};
 
 var annoyance = 0;
 
@@ -204,56 +204,57 @@ function endGameText(diff, surv_time) {
 			if (surv_time < 6890) {
 				++annoyance;
 				switch (annoyance) {
-					case 1:
-						return [
-							{ text: "Look, I gave you\na shield for one\npurpose and one\npurpose only."},
-							{ text: "To DEFEND YOURSELF."},
-							{ text: "Can't get more\nstraightforward\nthan that."},
-						];
-					case 2:
-						return [
-							{ text: "Are you just doing\nthat on purpose?", face: 2 },
-							{ text: "Because it's not\nfunny. Stop it." },
-						];
-					default:
-						menu.disableEasyMode();
-						return [
-							{ text: "NGAHHHHHHH!", face: 3 },
-							{ text: "If you're not going\nto take this\nseriously...", face: 1 },
-							{ text: "I'm just going to\nhave to force you\nto try harder!", face: 3 },
-						];
+                    case 1:
+                        return [
+                            { text: "て にもっている \nものはただの\nかざりなのかしら" },
+                            { text: "ほうこうキーで\nふせぐのよ" },
+                            { text: "つぎはほんきで\nやるわよ" },
+                        ];
+                    case 2:
+                        return [
+                            { text: "それがほんきなの?", face: 2 },
+                            { text: "びっくりするほど\nよわい!!" },
+                        ];
+                    default:
+                        menu.disableEasyMode();
+                        return [
+                            { text: "もおおおぉぉ！", face: 3 },
+                            { text: "ほんとうに\nさけるつもりあるの？", face: 1 },
+                            { text: "もうほんきで\nやるんだから！！", face: 3 },
+                        ];
 				}
 			} else if (surv_time < 60000)
 				return [
-					{ text: "Is that the best\nyou've got?" },
-					{ text: "Pathetic. I know you\ncan do better!" },
+					{ text: "それがあなたのほんき？" },
+					{ text: "あなたは もっとつよいはず" },
+                    { text: "......\nかなしいわ"},
 				];
 			else if (surv_time < 120000)
 				return [
-					{ text: "Good, but still\nnot good enough." },
-					{ text: "Keep trying, human!\nReach for the top!" },
+					{ text: "なかなかつよいじゃない \nでもまだまだね" },
+					{ text: "もっと うえをめざしなさい \nにんげん よ" },
 				];
 			else {
 				menu.disableEasyMode();
 				return [
-					{ text: "You're doing well,\nbut only because I'm\ngoing easy on you." },
-					{ text: "It won't be so easy\nnext time!" },
+					{ text: "とても つよいじゃない \nでもあなたはもっと つよいはず" },
+					{ text: "でも つぎはそううまくいかないわ \nつぎでまっているわ" },
 				];
 			}
 		case "hard":
 			if (surv_time < 60000)
 				return [
-					{ text: "Is that the best\nyou've got?" },
-					{ text: "Pathetic. I know you\ncan do better!" },
+					{ text: "やっぱり そのていどなのね?" },
+					{ text: "かなしいくらいに よわいね" },
 				];
 			else if (surv_time < 120000)
 				return [
-					{ text: "Good, but still\nnot good enough." },
-					{ text: "Keep trying, human!\nReach for the top!" },
+					{ text: "つよいじゃない \nでもじゅうぶんではないね" },
+					{ text: "とっぷをめざしなさい にんげんよ" },
 				];
 			else
 				return [
-					{ text: "You're doing well." },
+					{ text: "あなたは つよくなったはね" },
 					{ text: "But you can still\ndo better! Let me\ngo harder on you!" },
 				];
 		case "genocide":

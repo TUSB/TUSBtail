@@ -255,15 +255,30 @@ function endGameText(diff, surv_time) {
 			else
 				return [
 					{ text: "あなたは つよくなったはね" },
-					{ text: "But you can still\ndo better! Let me\ngo harder on you!" },
+					{ text: "でも... もっとつよくなれるはず" },
+                    { text: "わたしを もっとたのしませて" },
 				];
 		case "genocide":
-			return [
-				{ text: "You're going to have\nto try a little\nharder than THAT." },
-			];
+            if (surv_time < 60000)
+                return [
+                    { text: "しょせんは そのていど" },
+                    { text: "わたしに しょうめいしてみなさい" },
+                    { text: "いきのこれる つよさが\nあるということを！" },
+                ];
+            else if (surv_time < 120000)
+                return [
+                    { text: "このせかいは やるか やられるか" },
+                    { text: "しぬきで くりあ \n をめざしなさい" },
+                ];
+            else
+                return [
+                    { text: "あなたは つよくなったはね" },
+                    { text: "これでもうここは \n かんぜん くりあ よ" },
+                    { text: "いままでありがとう" },
+                ];
 		case "aprilfools":
 			return [
-				{ text: "APRIL FOOLS,\nMOTHERFUCKERS!" },
+				{ text: "死ね" },
 			];
 		default:
 			return [

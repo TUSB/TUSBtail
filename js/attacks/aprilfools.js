@@ -3,10 +3,9 @@ var af_ag1 = {
 	id: "af_ag1",
 	next_time: 4.8,
 	arrows: [
-		{ direction: "$3", turntype: 4, target_time: 0.0, speed: 40 },
-        { direction: "$3", turntype: 1, target_time: 1.6, speed: 40 },
-        { direction: "$3", turntype: 1, target_time: 1.9, speed: 40 },
-		{ direction: "$3", turntype: 4, target_time: 3.2, speed: 900 },
+		{ direction: "$3", turntype: 0, target_time: 0.0, speed: 40 },
+		{ direction: "$3", turntype: 0, target_time: 1.6, speed: 40 },
+		{ direction: "$3", turntype: 0, target_time: 3.2, speed: 40 },
 
 		{ direction: "N1", turntype: 2, target_time: 0.3, speed: 500 },
 		{ direction: "N1", turntype: 3, target_time: 0.6, speed: 500 },

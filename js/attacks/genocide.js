@@ -5,7 +5,7 @@ var g_ag1 = {
 	arrows: [
 		{ direction: "$3", turntype: 0, target_time: 0.0, speed: 40 },
 		{ direction: "$3", turntype: 0, target_time: 1.6, speed: 40 },
-		{ direction: "$3", turntype: 0, target_time: 3.2, speed: 40 },
+		{ direction: "$3", turntype: 0, target_time: 3.2, speed: 900 },
 
 		{ direction: "N3", turntype: 0, target_time: 0.3, speed: 500 },
 		{ direction: "N3", turntype: 0, target_time: 0.6, speed: 500 },

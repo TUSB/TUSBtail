@@ -278,12 +278,11 @@ function endGameText(diff, surv_time) {
                 ];
 		case "aprilfools":
 			return [
-				{ text: "死ね" },
+				{ text: "しね" },
 			];
 		default:
 			return [
-				{ text: "Is that the best\nyou've got?" },
-				{ text: "Pathetic. I know you\ncan do better!" },
+				{ text: "このメッセージ みれるの おかしいよ" },
 			];
 	}
 }

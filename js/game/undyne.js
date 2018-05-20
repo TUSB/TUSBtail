@@ -71,7 +71,7 @@ function Undyne() {
 
     this.speech_bubble_text = new PIXI.extras.BitmapText(
         "",
-        { font: "18px ja_jp", align: "left" }
+        { font: "18px tusb", align: "left" }
     );
     this.speech_bubble_text.maxWidth = 180;
     this.speech_bubble_text.position.set(442, 24);

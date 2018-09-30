@@ -75,13 +75,13 @@ GameState.prototype.restartGame = function(difficulty) {
 
 	if (april_fools || date.getMonth() === 3 && date.getDate() === 1) {
 		if (april_fools === false) {
-			heart.setMaxHP(99);
+			heart.setMaxHP(4);
 		} else {
 			switch(difficulty){
 				case "ノーマル":
-					heart.setMaxHP(99); break;
+					heart.setMaxHP(4); break;
 				case "ハード":
-					heart.setMaxHP(20); break;
+					heart.setMaxHP(4); break;
 				case "ジェノサイド":
 					heart.setMaxHP(4); break;
 			}

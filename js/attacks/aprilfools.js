@@ -33,9 +33,17 @@ var af_sp1 = {
 	next_time: 1.6,
 	buffer_time: 0.3,
 	spear_interval: 300,
-	next_sets: ["af_ag2"],
+	next_sets: ["af_pk1"],
 };
 
+var af_pk1 = {
+    type: "pike",
+    next_time: 6.4,
+    buffer_time: 0.8,
+    pike_interval: 400,
+    down: true,
+    next_sets: ["af_sp1"],
+};
 
 var af_ag2 = {
 	type: "arrow",

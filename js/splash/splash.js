@@ -152,7 +152,7 @@ SplashScene.prototype.update = function(delta_ms) {
 		this.undyne_sprite.position.y = 360 - 1080 * interp_clamp(scene.scene_time, 8520, 9000, 0, 1);
 		this.un_sprite.position.y = -780 + 1060 * Math.pow(interp_clamp(scene.scene_time, 9000, 10500, 0, 1), 2);
 	} else if (scene.scene_time < 12000) {
-		if (this.undyne_jumped == false) {
+		if (this.undyne_jumped === false) {
 			this.undyne_jumped = true;
 			splash_stage.removeChild(this.undyne_sprite);
 			splash_stage.addChildAt(this.undyne_sprite, 0);

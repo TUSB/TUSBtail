@@ -24,7 +24,7 @@ function GameState() {
 
 GameState.prototype.handleInput = function(key) {
 
-	if (undyne.text_state != "none"){
+	if (undyne.text_state !== "none"){
 		switch(key) {
 			case "A":
 				undyne.advanceTextA();
@@ -35,7 +35,7 @@ GameState.prototype.handleInput = function(key) {
 			default:
 				break;
 		}
-	} else if (this.state == "menu") {
+	} else if (this.state === "menu") {
 		switch(key) {
 			case "up":
 				menu.moveUp();
@@ -48,7 +48,7 @@ GameState.prototype.handleInput = function(key) {
 			default:
 				break;
 		}
-	} else if (this.state == "playing") {
+	} else if (this.state === "playing") {
 		switch(key) {
 			case "left":
 				heart.setShieldDir(2);
@@ -73,8 +73,8 @@ GameState.prototype.restartGame = function(difficulty) {
 
 	var date = new Date();
 
-	if (april_fools || date.getMonth() == 3 && date.getDate() == 1) {
-		if (april_fools == false) {
+	if (april_fools || date.getMonth() === 3 && date.getDate() === 1) {
+		if (april_fools === false) {
 			heart.setMaxHP(99);
 		} else {
 			switch(difficulty){
@@ -171,7 +171,7 @@ GameState.prototype.endGame = function() {
 	undyne.opacity_g.alpha = 0;
 	this.state = "gameover";
 
-	menu.select_text.text = "Play again?"
+	menu.select_text.text = "Play again?";
 
 	switch (this.difficulty) {
 		case "normal":
@@ -182,7 +182,7 @@ GameState.prototype.endGame = function() {
 			bgm_undyne2.stop();	break;
 	}
 
-	// if (this.difficulty == "aprilfools") {
+	// if (this.difficulty === "aprilfools") {
 	// 	document.getElementById("fairdyne").innerHTML = "APRIL FOOLS";
 	// 	menu.normal_text_text = "I want to BE AN APRIL FOOL";
 	// 	menu.hard_text_text = "I want OUT OF THIS MODE";
@@ -218,14 +218,14 @@ function endGameText(diff, surv_time) {
                     default:
                         menu.disableEasyMode();
                         return [
-                            { text: "もおおおぉぉ！", face: 3 },
-                            { text: "ほんとうに\nさけるつもりあるの？", face: 1 },
-                            { text: "もうほんきで\nやるんだから！！", face: 3 },
+                            { text: "もおおおぉぉ!", face: 3 },
+                            { text: "ほんとうに\nさけるつもりあるの?", face: 1 },
+                            { text: "もうほんきで\nやるんだから!!", face: 3 },
                         ];
 				}
 			} else if (surv_time < 60000)
 				return [
-					{ text: "それがあなたのほんき？" },
+					{ text: "それがあなたのほんき?" },
 					{ text: "あなたは もっとつよいはず" },
                     { text: "......\nかなしいわ"},
 				];
@@ -278,7 +278,7 @@ function endGameText(diff, surv_time) {
                 ];
 		case "aprilfools":
 			return [
-				{ text: "しね" },
+				{ text: "にんげん って おろか だ" },
 			];
 		default:
 			return [
@@ -295,7 +295,7 @@ GameState.prototype.update = function(delta_ms) {
 	undyne.update(delta_ms);
 	menu.update(delta_ms);
 
-	if (this.state == "playing") {
+	if (this.state === "playing") {
 		this.elapsed_time += delta_ms;
 		time_text.text = format_time_long(this.elapsed_time);
 
@@ -329,13 +329,13 @@ GameState.prototype.update = function(delta_ms) {
 		var current_attack = attack_queue[0];
 		current_attack.time -= delta_ms / 1000;
 
-		if (current_attack.type == "spear") {
+		if (current_attack.type === "spear") {
 			spear_time -= delta_ms;
 			if (spear_time <= 0) {
 				spear_time += spear_interval;
 				addNewSpear();
 			}
-		} else if (current_attack.type == "pike") {
+		} else if (current_attack.type === "pike") {
 			pike_time -= delta_ms;
 			if (pike_time <= 0) {
 				pike_time += pike_interval;
@@ -344,19 +344,17 @@ GameState.prototype.update = function(delta_ms) {
 		}
 
 		if (current_attack.time <= 0.4 + (current_attack.buffer_time || 0) &&
-			current_attack.type != attack_queue[1].type)
+			current_attack.type !== attack_queue[1].type)
 				undyne.swing_arm();
 
 		if (current_attack.time <= (current_attack.buffer_time || 0))
 				switchAttackMode();
 
-	} else if (this.state == "gameover") {
+	} else if (this.state === "gameover") {
 
-	} else {
+	} else {}
 
-	}
-
-}
+};
 
 
 

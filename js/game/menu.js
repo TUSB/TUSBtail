@@ -63,7 +63,7 @@ Menu.prototype.update = function(delta_ms) {
     this.hard_text.text = this.hard_text_text.substr(0, Math.floor(this.hard_text_chars));
     this.genocide_text.text = this.genocide_text_text.substr(0, Math.floor(this.genocide_text_chars));
 
-}
+};
 
 Menu.prototype.show = function() {
 
@@ -88,12 +88,12 @@ Menu.prototype.show = function() {
     this.hard_text.visible = true;
     this.genocide_text.visible = true;
 
-}
+};
 
 Menu.prototype.disableEasyMode = function() {
 
-    if (this.current_option == 3) this.current_option = 2;
-    if (this.current_option == 0) this.current_option = 2;
+    if (this.current_option === 3) this.current_option = 2;
+    if (this.current_option === 0) this.current_option = 2;
     this.normal_text.alpha = 0.2;
     this.easy_mode_enabled = true;
 

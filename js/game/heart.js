@@ -72,9 +72,9 @@ Heart.prototype.update = function(delta_ms) {
 
 	this.shield_sprite.rotation = 0.6 * this.shield_sprite.rotation + 0.4 * this.target_rotation;
 
-	if (gamestate.state == "playing") {
-		if (this.colour == "green") this.recenter(delta_ms);
-		if (this.colour == "red") this.move(delta_ms);
+	if (gamestate.state === "playing") {
+		if (this.colour === "green") this.recenter(delta_ms);
+		if (this.colour === "red") this.move(delta_ms);
 	}
 
 }
@@ -96,7 +96,7 @@ Heart.prototype.move = function(delta_ms) {
 	if (key_is_down["down"])
 		d.y = + speed * delta_ms;
 
-	var f = vnorm(d) == 0 ? d : scalar_mult(d, speed * delta_ms / vnorm(d));
+	var f = vnorm(d) === 0 ? d : scalar_mult(d, speed * delta_ms / vnorm(d));
 
 	this.pos_x = clamp(this.pos_x + f.x, box.left + HEART_SIZE / 2, box.right - HEART_SIZE / 2);
 	this.pos_y = clamp(this.pos_y + f.y, box.top + HEART_SIZE / 2, box.bottom - HEART_SIZE / 2);
@@ -175,7 +175,7 @@ Heart.prototype.takeDamage = function(damage) {
 
 	se_damage.play();
 	this.hp = Math.max(0, this.hp - damage);
-	if (this.hp == 0) {
+	if (this.hp === 0) {
 		gamestate.endGame();
 	}
 

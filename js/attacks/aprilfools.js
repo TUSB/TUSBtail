@@ -42,7 +42,7 @@ var af_pk1 = {
     buffer_time: 0.8,
     pike_interval: 400,
     down: true,
-    next_sets: ["af_sp1"],
+    next_sets: ["af_ag2"],
 };
 
 var af_ag2 = {

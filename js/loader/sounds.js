@@ -31,7 +31,7 @@ var bgm_undyne = new Howl({
 	onload: reg_sound(10),
 	src: "audio/bgm/mus_undyne.ogg",
 	loop: true,
-	volume: 0.7,
+	volume: 0.4,
 });
 
 var bgm_undyne1 = new Howl({

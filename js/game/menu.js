@@ -113,7 +113,6 @@ Menu.prototype.hide = function() {
 }
 
 Menu.prototype.updateLove = function() {
-    if (handleWin.closed == false) handleWin.close();
     switch (this.current_option) {
         case 0:
             love_text.text = "LV 1";
@@ -132,7 +131,7 @@ Menu.prototype.updateLove = function() {
             heart.setMaxHP(4);
             break;
     }
-}
+};
 
 Menu.prototype.moveUp = function() {
 

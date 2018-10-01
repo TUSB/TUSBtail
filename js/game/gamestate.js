@@ -153,7 +153,7 @@ GameState.prototype.restartGame = function(difficulty) {
 
 	switchAttackMode();
 
-}
+};
 
 
 GameState.prototype.endGame = function() {

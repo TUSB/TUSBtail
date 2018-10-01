@@ -1,3 +1,10 @@
+function getRandomInt(max,min) {
+    return Math.floor( Math.random() * (max + 1 - min) ) + min;
+}
+
+const arr = [ "$3", "N1", "R", "+0", "-0", "+2", "-2", "1", "2", "3", "4" ] ;
+var arrType = arr[ Math.floor( Math.random() * arr.length ) ] ;
+
 var af_ag1 = {
 	type: "arrow",
 	id: "af_ag1",
@@ -30,17 +37,17 @@ var af_ag1 = {
 
 var af_sp1 = {
 	type: "spear",
-	next_time: 1.6,
-	buffer_time: 0.3,
-	spear_interval: 300,
+	next_time: 6.6,
+	buffer_time: 0.1,
+	spear_interval: 200,
 	next_sets: ["af_pk1"],
 };
 
 var af_pk1 = {
     type: "pike",
-    next_time: 6.4,
+    next_time: 6.6,
     buffer_time: 0.8,
-    pike_interval: 400,
+    pike_interval: 300,
     down: true,
     next_sets: ["af_ag2"],
 };
@@ -299,5 +306,95 @@ var af_ag5 = {
 		{ direction: "R", turntype: 1, target_time: 6.2, speed: 400 },
 		{ direction: "R", turntype: 4, target_time: 6.3, speed: 400 },
 	],
-	next_sets: ["af_ag4"],
+	next_sets: ["af_ag6"],
+};
+
+var af_ag6 = {
+    type: "arrow",
+    id: "af_ag6",
+    next_time: 6.5,
+    arrows: [
+        { direction: "R", turntype: getRandomInt(0,4) , target_time: 0.0, speed: getRandomInt(50,700) },
+        { direction: "R", turntype: getRandomInt(0,4) , target_time: 0.1, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 0.2, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 0.3, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 0.4, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 0.5, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 0.6, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 0.7, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 0.8, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 0.9, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.0, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.1, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.2, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.3, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.4, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.5, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.6, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.7, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.8, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 1.9, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.0, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.1, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.2, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.3, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.4, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.5, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.6, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.7, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.8, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 2.9, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.0, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.1, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.2, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.3, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.4, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.5, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.6, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.7, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.8, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 3.9, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.0, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.1, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.2, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.3, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.4, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.5, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.6, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.7, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.8, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 4.9, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.0, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.1, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.2, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.3, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.4, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.5, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.6, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.7, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.8, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 5.9, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 6.0, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 6.1, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 6.2, speed: getRandomInt(100,550)},
+        { direction: "R", turntype: getRandomInt(0,4), target_time: 6.3, speed: getRandomInt(100,550)},
+    ],
+    next_sets: ["af_sp3"],
+};
+
+var af_sp3 = {
+    type: "spear",
+    next_time: 12.6,
+    buffer_time: 0.0,
+    spear_interval: 100,
+    next_sets: ["af_pk2"],
+};
+
+var af_pk2 = {
+    type: "pike",
+    next_time: 10.6,
+    buffer_time: 0.8,
+    pike_interval: 350,
+    down: true,
+    next_sets: ["af_ag4"],
 };

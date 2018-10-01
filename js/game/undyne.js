@@ -214,7 +214,7 @@ Undyne.prototype.update = function (delta_ms) {
         this.leftarm_sprite.position.y = 134 + 4 * Math.sin(this.animation_time / 1200 * Math.PI * 2);
         this.leftarm_sprite.position.x = 369 + 2 * Math.sin(this.animation_time / 600 * Math.PI * 2);
 
-    } else if (this.animation_state == "swinging_arm") {
+    } else if (this.animation_state === "swinging_arm") {
 
         if (this.animation_time < 300) {
             this.rightarm_sprite.rotation = (40 - 40 * Math.pow(interp_clamp(this.animation_time, 0, 200, 1, 0), 4)) * Math.PI / 180;

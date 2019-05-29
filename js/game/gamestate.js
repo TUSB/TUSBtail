@@ -129,7 +129,7 @@ GameState.prototype.restartGame = function(difficulty) {
 			break;
 		case "aprilfools":
 			attack_queue_time = 6.4;
-			attack_queue = [ { type: "null", time: 6.4 } ];
+			attack_queue = [ { type: "null", time: 12.8 } ];
 			addNextAttack(af_ag1);
 			break;
 	}
@@ -191,7 +191,7 @@ GameState.prototype.endGame = function() {
 	// 	menu.hard_text.text = "I want OUT OF THIS MODE";
 	// 	menu.genocide_text.text = "I want to PLAY THIS MODE FOR REAL";
 	// }
-
+	$('div.bottom-credits').append('<button>追加されました</button>');
 	undyne.queue_text(endGameText(this.difficulty, this.elapsed_time), menu.show.bind(menu));
 
 };
@@ -274,11 +274,17 @@ function endGameText(diff, surv_time) {
                 return [
                     { text: "あなたは つよくなったはね" },
                     { text: "これでもうここは \n かんぜん くりあ よ" },
-                    { text: "いままでありがとう" },
+					{ text: "いままでありがとう" },
+					{ text: "................." },
+					{ text: ".................." },
+					{ text: "のーまる もーど で" },
+					{ text: "すぐにやられてみなさい" },
+					{ text: "わたしに あきれられる と" },
+					{ text: "おもしろいものがみれるわ" },
                 ];
 		case "aprilfools":
 			return [
-				{ text: "にんげん って おろか だ" },
+				{ text: "にんげん って\n おろか だ" },
 			];
 		default:
 			return [

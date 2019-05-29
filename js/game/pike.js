@@ -102,11 +102,11 @@ function addNewPike() {
 
 function forcedToMoveTwoLanes(last_up, last_down, up, down) {
 
-	if (last_up != last_down && last_up != 1 && last_down != 1 &&
-		up != down && up != 3 && down != 3) {
+	if (last_up !== last_down && last_up !== 1 && last_down !== 1 &&
+		up !== down && up !== 3 && down !== 3) {
 		return true;
-	} else if (last_up != last_down && last_up != 3 && last_down != 3 &&
-		up != down && up != 1 && down != 1) {
+	} else if (last_up !== last_down && last_up !== 3 && last_down !== 3 &&
+		up !== down && up !== 1 && down !== 1) {
 		return true;
 	}
 	return false;
